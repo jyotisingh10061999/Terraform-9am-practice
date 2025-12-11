@@ -1,5 +1,7 @@
 resource "aws_instance" "practice" {
-    ami = "ami-0fa3fe0fa7920f68e"
-    instance_type = "t2.micro"
-  
+    ami = var.ami
+    instance_type = var.instance_type
+    tags = {
+      name = "ec2test"
+    }  
 }
