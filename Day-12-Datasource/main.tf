@@ -1,7 +1,7 @@
 data "aws_subnet" "name" {
     filter {
-      name = "tag:name"
-      values = ["dev"]
+      name = "tag:Name"
+      values = ["my-subnet"]
     }
   
 }
@@ -34,10 +34,10 @@ data "aws_ami" "amzlinux" {
     values = [ "x86_64" ]
   }
 }
-# data "aws_ami" "amzlinux" {
-#   most_recent = true
-#   owners = [ "self" ]
-#   filter {
-#     name = "name"
-#     values = [ "frontend-ami" ]
-#   }
+data "aws_ami" "amzlinux" {
+  most_recent = true
+  owners = [ "self" ]
+  filter {
+    name = "name"
+    values = [ "frontend-ami" ]
+  }
